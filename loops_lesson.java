@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class exarsise {
+public class Main {
     static Scanner scan = new Scanner(System.in);
 
     public static void f1(){
@@ -66,7 +66,7 @@ public class exarsise {
                 System.out.println("not palindrome");
                 flag = false;
                 break;
-            }
+            
         }
 
         if(flag){
@@ -76,6 +76,8 @@ public class exarsise {
         }
 
     }
+    }
+    
 
     public static void f5(int num){
 
@@ -132,21 +134,62 @@ public class exarsise {
 
     public static boolean f8 (int num){
 
-        int fibo_num = 1;
-        while (num != fibo_num) {
-            fibo_num += fibo_num
+        int a = 1, b = 1;
+        while (a <= num) { // while the checking number is smaller than the num we want to find (because when it is bigger the number will not be found couse fibo series is only growing)
+            
+            if (a == num || b == num){
+                return true;
+            }
+            
+            else{
+                a += b;  // first promoting the a because 'a' is used as a limit for the loop
+                b += a;
+            }
 
         }
+        
+        return false;
 
 
 
+    }
+    
+    
+    
+    public static void f9(int num1, int num2){
+        
+        int number = 0;
+        for(int i = 0; i < num1; i++){
+            number += num2;
+        }
+        System.out.println(number);
+        
+    }
+    
+    public static void f10(int heighet){
+        String triangle;
+        
+        int max_anount_of_asterisk = (heighet * 2) - 1;  // to get the max amount of asterisk (in the base of the triangle)
+        
+        for (int i = 1; i <= heighet; i+=2){
+            int amount_of_spaces_needed_on_every_side = (max_anount_of_asterisk - i) / 2;
+            triangle += (" " * amount_of_spaces_needed_on_every_side) + ("*" * i) + (" " * amount_of_spaces_needed_on_every_side) + "\n";
+            // System.out.println((" " * amount_of_spaces_needed_on_every_side) + ("*" * i) + (" " * amount_of_spaces_needed_on_every_side));
+            // error: str cant be multiplied by a num!
+            
+            
+        }
+        
+        
+        
     }
 
 
 
     public static void main(String[]args){
 
-        f7();
+        // System.out.println(f8(6));
+        f10(3);
 
     }
 
