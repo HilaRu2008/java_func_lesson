@@ -1,3 +1,11 @@
+/******************************************************************************
+
+                            Online Java Compiler.
+                Code, Compile, Run and Debug java program online.
+Write your code in this editor and press "Run" button to execute it.
+
+*******************************************************************************/
+
 import java.util.Scanner;
 
 public class Main {
@@ -167,18 +175,76 @@ public class Main {
     }
     
     public static void f10(int heighet){
-        String triangle;
         
         int max_anount_of_asterisk = (heighet * 2) - 1;  // to get the max amount of asterisk (in the base of the triangle)
+        // max_anount_of_asterisk = 7
         
-        for (int i = 1; i <= heighet; i+=2){
+        for (int i = 1; i <= max_anount_of_asterisk; i+=2){ // to make sure that the program wont run more asterisks lines than needed ( = the amont of asterisks we want to print in each line)
             int amount_of_spaces_needed_on_every_side = (max_anount_of_asterisk - i) / 2;
-            triangle += (" " * amount_of_spaces_needed_on_every_side) + ("*" * i) + (" " * amount_of_spaces_needed_on_every_side) + "\n";
-            // System.out.println((" " * amount_of_spaces_needed_on_every_side) + ("*" * i) + (" " * amount_of_spaces_needed_on_every_side));
-            // error: str cant be multiplied by a num!
             
+            // System.out.print(amount_of_spaces_needed_on_every_side);
+            for (int space = 0; space < amount_of_spaces_needed_on_every_side; space++){
+                System.out.print(" ");
+            }
             
+            for (int j = 0; j < i; j++){  // j is the amount of asterisk in every line
+                System.out.print('*');
+            }
+
+            
+            System.out.println();
+            
+
         }
+        
+    }
+        
+        
+    public static void f11(int a1, int d, int n){
+        
+        int an;
+        
+        for (int first_distance = 1; first_distance <= n; first_distance++){
+            
+            an = a1 + d * (first_distance - 1);
+            
+            if (first_distance == n)
+                System.out.print(an);
+                
+            else
+                System.out.print(an + ", ");
+                
+    
+        }
+        
+    }
+    
+    
+    public static void f12(int index1, int index2){
+        
+        // if index1 < index2
+
+        int number;
+        int a = 1;
+        int b = 1;
+        
+        int i = 0;
+        while (i < index2) {
+            
+            if (a >= index1)
+                if (a <= index2 && b <= index2) // && b <= index2
+                    System.out.print(a + " ");
+                    System.out.print(b);
+                
+            
+            a += b;
+            b += a;
+            i++;
+                
+                
+        }
+            
+            
         
         
         
@@ -189,7 +255,7 @@ public class Main {
     public static void main(String[]args){
 
         // System.out.println(f8(6));
-        f10(3);
+        f12(4,9);
 
     }
 
