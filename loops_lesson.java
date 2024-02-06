@@ -1,10 +1,3 @@
-/******************************************************************************
-
-                            Online Java Compiler.
-                Code, Compile, Run and Debug java program online.
-Write your code in this editor and press "Run" button to execute it.
-
-*******************************************************************************/
 
 import java.util.Scanner;
 
@@ -220,42 +213,43 @@ public class Main {
     }
     
     
-    public static void f12(int index1, int index2){
+    public static void f12(int index1, int index2){ 
         
         // if index1 < index2
 
-        int number;
         int a = 1;
         int b = 1;
         
-        int i = 0;
-        while (i < index2) {
+        for (int i=0; i < index2; i++) {  // i = 3
             
-            if (a >= index1)
-                if (a <= index2 && b <= index2) // && b <= index2
-                    System.out.print(a + " ");
-                    System.out.print(b);
-                
             
-            a += b;
-            b += a;
-            i++;
+            if (i % 2 == 0){
+                if (i >= index1)
+                    System.out.println(a);
+                a += b;
+            }
                 
+            else{
+                
+                if (i >= index1)
+                    System.out.println(b);
+                b += a;
+                
+            }
                 
         }
-            
-            
-        
-        
-        
     }
+    
+    
+    
+    /// public
 
 
 
     public static void main(String[]args){
 
         // System.out.println(f8(6));
-        f12(4,9);
+        f12(2,5);
 
     }
 
